@@ -5,29 +5,14 @@ for i in range(6):
 
 while True:
 
-    starting_player = input("Do you want to play as X or O? ")
-    if starting_player == "X" or starting_player == "O":
-        break
-    else:
-        print("Invalid input")
-    
-    
+    def print_board():
+        for row in board:
+            print(row)
 
-    # to print the board
-    for row in board:
-        for colum in row:
-            print(colum, end=' ')
-        print()
-
-    tokenX = 'X'
-    tokenO = 'O'
-    column = int(input("Enter your choice(column 1-6): "))
-
-    # to place the token
-    for row in range(5, -1, -1):
-        if board[row][column] == "_":
-            board[row][column] = tokenO 
-            break
+    def place_token(player_count):
+        token = "X"
+        if player_count % 2 == 0:
+            token = "O"
 
     # to check for win
     for row in range(6):
@@ -38,3 +23,13 @@ while True:
             elif board[row][colum] == board[row][colum + 1] == board[row][colum + 2] == board[row][colum + 3] == "O":
                 print("Player O wins")
                 break
+
+    def switch_player():
+        global tokenX
+        global tokenO
+        if tokenX == 'X':
+            tokenX = 'O'
+            tokenO = 'X'
+        else:
+            tokenX = 'X'
+            tokenO = 'O'
