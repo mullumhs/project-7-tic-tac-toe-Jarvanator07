@@ -1,17 +1,16 @@
 board = [' ' for x in range(9)] 
 
 def print_board():
-  row1 = '| ' + board[0] + ' | ' + board[1] + ' | ' + board[2] + ' | 1'
-  row2 = '| ' + board[3] + ' | ' + board[4] + ' | ' + board[5] + ' | 2'
-  row3 = '| ' + board[6] + ' | ' + board[7] + ' | ' + board[8] + ' | 3'
+  row1 = '|_' + board[0] + '_|_' + board[1] + '_|_' + board[2] + '_| 1 R'
+  row2 = '|_' + board[3] + '_|_' + board[4] + '_|_' + board[5] + '_| 2 O'
+  row3 = '| ' + board[6] + ' | ' + board[7] + ' | ' + board[8] + ' | 3 W'
 
   print()
+  print("   COLUMN")
   print('  1   2   3')
   print("_"*13)
   print(row1)
-  print("–"*13)
   print(row2)
-  print("–"*13)
   print(row3)
   print("‾"*13)
   print()
